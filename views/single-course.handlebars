@@ -1,0 +1,21 @@
+{{> course-info course}}
+
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Add comment</button>
+    <button type="button" class="pick-btn">Pick this course</button>
+  </div>
+</form>
+{{/if}}
+
+{{> comments course.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/pick.js"></script>
+{{/if}}

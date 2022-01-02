@@ -1,0 +1,36 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h3>
+    Edit Course
+  </h3>
+  <form class="edit-course-form">
+    <div>
+      <input name="course-title" type="text" value="{{course.title}}" />
+      <span>({{format_url course.course_url}})</span>
+    </div>
+    <div>
+      {{course.pick_count}} {{format_plural "pick" course.pick_count}} by you on {{format_date course.created_at}}
+      |
+      <a href="/course/{{course.id}}">{{course.comments.length}} {{format_plural "comment" course.comments.length}}</a>
+    </div>
+    <button type="submit">Save Course</button>
+    <button type="button" class="delete-course-btn">Delete Course</button>
+    <br/>
+  </form>
+</article>
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Add Comment</button>
+  </div>
+</form>
+
+{{> comments course.comments}}
+
+<script src="/javascript/edit-course.js"></script>
+<script src="/javascript/delete-course.js"></script>
+<script src="/javascript/comment.js"></script>

@@ -1,0 +1,33 @@
+<section>
+  <h3>Create a New Course</h3>
+
+  <form class="new-course-form">
+    <div>
+      <label for="course-title">Title</label>
+      <input type="text" id="course-title" name="course-title" />
+    </div>
+    <div>
+      <label for="course-url">Link</label>
+      <input id="course-url" name="course-url" />
+    </div>
+    <button type="submit" class="btn">Create</button>
+  </form>
+</section>
+<br/>
+
+{{#if courses.length}}
+<section>
+  <h3>Your Courses</h3>
+  <ol>
+    {{#each courses as |course|}}
+    <li>
+      {{> course-info course}}
+      <br/>
+      <a href="/dashboard/edit/{{course.id}}" class="edit-link">Edit Course</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-course.js"></script>

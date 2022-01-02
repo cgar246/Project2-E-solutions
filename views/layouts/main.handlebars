@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Online Learning Solutions</title>
+</head>
+
+<body>
+    <section class="full-body">
+        <section class="content">
+            <section id="leftside" class="left-side">
+                <div class="about">
+                    <h1>E-SOLUTIONS</h1>
+                    <h2 class="subtitle">An Online Course Library</h2>
+                    <img class="img" src="/images/online-learning-1.jpg">
+                    <img class="img" src="/images/online-learning-2.jpg">
+                    <img class="img" src="/images/online-learning-3.jpg">
+                    <img class="img" src="/images/online-learning-1.jpg">
+                    <img class="img" src="/images/online-learning-2.jpg">
+                    <img class="img" src="/images/online-learning-3.jpg">
+                </div>
+                <div class="about-info">
+                    <p>
+                        <img class="" src="/images/6.png">
+                        E-solutions is an online library that hosts web links of video courses. Visitors can view courses and read comments from registered users. 
+                        Upon registration and logging in, users may pick and give comment to courses. Registered users will also be able to post, edit, and delete courses from their
+                        dashboards.
+                    </p>
+                </div>
+            </section>
+            <section id="projects" class="right-side proj">
+                <nav>
+                    <a href="/sort" class="btn">Sort Courses</a>
+                    {{#if loggedIn}}
+                    <a href="/dashboard" class="btn">Dashboard</a>
+                    <button id="logout" class="btn">Logout</button>
+                    {{else}}
+                    <a href="/login" class="btn">Login</a>
+                    {{/if}}
+                    
+                </nav>
+                <main> {{{ body }}}</main>
+            
+            </section>
+        </section>
+        <footer>
+            Learning without Limits!
+        </footer>
+    </section>
+    {{#if loggedIn}} 
+    <script src="/javascript/logout.js"></script> 
+    {{/if}} 
+
+</body>
+
+</html>
+

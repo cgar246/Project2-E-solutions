@@ -1,0 +1,15 @@
+<article class="course">
+  <div class="title">
+    <p>{{title}}</p>
+    <iframe width="200px" height="200px" src="{{course_url}}"></iframe>
+    <p class="source">Source: {{format_url course_url}}</p>
+    
+  </div>
+  <div class="pick">
+    <p>Created by {{user.username}}</p>
+    {{pick_count}} {{format_plural "pick" pick_count}} 
+    |
+    <a href="/course/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+  </div>
+  <br/>
+</article>
